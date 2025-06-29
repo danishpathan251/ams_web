@@ -195,7 +195,7 @@ const navigate = useNavigate();
         {/* Additional Info */}
         <div className="text-center mt-12 sm:mt-16 space-y-4">
           <p className="text-gray-600 text-sm sm:text-base px-4">
-            All plans include a <span className="font-semibold text-[#c22828]">14-day free trial</span> • No setup fees • Cancel anytime
+            All plans include a <span className="font-semibold text-[#c22828]">7-day free trial</span> • No setup fees • Cancel anytime
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500 px-4">
             <div className="flex items-center gap-2">

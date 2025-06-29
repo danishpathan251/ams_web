@@ -155,7 +155,7 @@ export default function Headers() {
         {isMenuOpen && (
           <div className="lg:hidden pb-4 border-t border-gray-100">
             <div className="pt-4 space-y-4">
-              <a href="#home" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
+              <a href="/" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                 Home
               </a>
               
@@ -173,13 +173,13 @@ export default function Headers() {
                 </a>
               </div>
               
-              <a href="#pricing" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
+              <a href="/plan-details" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                 Pricing
               </a>
-              <a href="#about" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
+              <a href="/ComponyAbout" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                 About
               </a>
-              <a href="#contact" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
+              <a href="/ContactUs" className="block py-2 text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                 Contact
               </a>
               
