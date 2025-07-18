@@ -10,42 +10,60 @@ const ChatBot = () => {
   const [isTyping, setIsTyping] = useState(false); // ✅ added
   const messagesEndRef = useRef(null); // ✅ added
 
-  useEffect(() => {
-    const ws = new WebSocket("ws://localhost:5000");
-    setSocket(ws);
+// useEffect(() => {
+//   const ws = new WebSocket("wss://chatbot.alpha-ms.xyz/api/chat");
+//   setSocket(ws);
 
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
+//   ws.onopen = () => {
+//     console.log("WebSocket connected");
+//   };
 
-      if (data.sender === "bot") {
-        setIsTyping(false); // ✅ stop typing when message is received
-        setMessages((prev) => [...prev, data]);
-      }
-    };
+//   ws.onmessage = (event) => {
+//     const data = JSON.parse(event.data);
 
-    return () => {
-      ws.close();
-    };
-  }, []);
+//     // Accept all messages (adjust if needed)
+//     setIsTyping(false);
+//     setMessages((prev) => [...prev, data]);
+//   };
 
-  useEffect(() => {
-    // Scroll to bottom when messages update
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+//   ws.onerror = (error) => {
+//     console.error("WebSocket error:", error);
+//   };
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+//   ws.onclose = () => {
+//     console.log("WebSocket disconnected");
+//   };
 
-    const userMessage = { sender: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
+//   return () => {
+//     ws.close();
+//   };
+// }, []);
 
-    if (socket && socket.readyState === WebSocket.OPEN) {
-      setIsTyping(true); // ✅ show typing indicator
-      socket.send(JSON.stringify(userMessage));
-    }
+const handleSend = async () => {
+  if (!input.trim()) return;
 
-    setInput("");
-  };
+  const userMessage = { name: "user", reply: input };
+  setMessages((prev) => [...prev, userMessage]);
+
+  setIsTyping(true);
+
+  try {
+    const response = await fetch("https://chatbot.alpha-ms.xyz/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: input }),
+    });
+    const data = await response.json();
+
+    setMessages((prev) => [...prev, { name: data.name, reply: data.reply }]);
+  } catch (error) {
+    console.error("API error:", error);
+  } finally {
+    setIsTyping(false);
+  }
+
+  setInput("");
+};
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-red-50 to-rose-50">

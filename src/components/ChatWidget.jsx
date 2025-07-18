@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChatBot from "./ChatBot"; // Your full chatbot component
+import ChatBot from "./Chatbot"; // Your full chatbot component
 import { Bot } from "lucide-react";
 
 const ChatWidget = () => {
