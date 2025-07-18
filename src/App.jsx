@@ -14,6 +14,7 @@ import ComponyAbout from './components/CompnayAbout';
 import AboutUs from './components/AboutUs';
 import TrialDownloadApp from './components/TrialDownloadApp';
 import LoginPage from './components/LoginPage';
+import ChatBot from './components/Chatbot';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,7 @@ function App() {
         <Route path="/ComponyAbout" element={<PageWrapper><ComponyAbout /></PageWrapper>} />
         <Route path="/Trail" element={<PageWrapper><TrialDownloadApp /></PageWrapper>} />
         <Route path="/Login" element={<PageWrapper><LoginPage /></PageWrapper>} />
+        <Route path="/chat-bot" element={<PageWrapper><ChatBot /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
       <Footer/>

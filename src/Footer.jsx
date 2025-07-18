@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Clock, Users, Building, Store } from 'lucide-react';
+import ChatWidget from './components/ChatWidget';
 
 const Footer = () => {
   return (
@@ -109,6 +110,7 @@ const Footer = () => {
               <button className="bg-white text-red-700 px-6 py-2 rounded-lg font-medium text-sm hover:bg-red-50 transition-all duration-300 transform hover:scale-105">
                 Get Free Demo
               </button>
+              <ChatWidget/>
             </div>
           </div>
         </div>
