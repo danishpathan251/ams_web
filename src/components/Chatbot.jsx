@@ -42,7 +42,7 @@ const ChatBot = () => {
 const handleSend = async () => {
   if (!input.trim()) return;
 
-  const userMessage = { name: "user", reply: input };
+  const userMessage = { sender: "user", text: input };
   setMessages((prev) => [...prev, userMessage]);
 
   setIsTyping(true);
@@ -54,8 +54,9 @@ const handleSend = async () => {
       body: JSON.stringify({ message: input }),
     });
     const data = await response.json();
+console.log(data);
 
-    setMessages((prev) => [...prev, { name: data.name, reply: data.reply }]);
+    setMessages((prev) => [...prev, data]);
   } catch (error) {
     console.error("API error:", error);
   } finally {
@@ -64,6 +65,7 @@ const handleSend = async () => {
 
   setInput("");
 };
+
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-red-50 to-rose-50">
@@ -81,13 +83,15 @@ const handleSend = async () => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"   style={{maxHeight:'300px'}}>
+
         {messages.map((msg, index) => (
           <div
             key={index}
             className={`flex items-start gap-3 ${
               msg.sender === "user" ? "flex-row-reverse" : "flex-row"
             }`}
+          
           >
             {/* Avatar */}
             <div
