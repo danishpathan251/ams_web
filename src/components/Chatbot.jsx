@@ -118,7 +118,7 @@ console.log(data);
                 }`}
               >
           <div
-  className="text-sm leading-relaxed whitespace-pre-line"
+  className="text-xs leading-relaxed whitespace-pre-line"
   dangerouslySetInnerHTML={{ __html: msg.text }}
 />
               </div>
