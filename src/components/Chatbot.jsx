@@ -118,7 +118,7 @@ console.log(data);
                 }`}
               >
                 <p className="text-sm leading-relaxed whitespace-pre-line">
-                  {msg.text}
+                  dangerouslySetInnerHTML={{ __html: msg.text }}
                 </p>
               </div>
               <div
@@ -126,7 +126,7 @@ console.log(data);
                   msg.sender === "user" ? "text-right" : "text-left"
                 }`}
               >
-                {msg.sender === "bot" ? "Danish Khan" : "You"}
+                {msg.sender === "bot" || msg.sender == "Danish"  ? "Danish" : "You"}
               </div>
             </div>
           </div>
