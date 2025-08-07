@@ -96,12 +96,12 @@ console.log(data);
             {/* Avatar */}
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                msg.sender === "bot"
+                msg.sender === "bot"  || msg.sender == "Danish" 
                   ? "bg-[#C62828] text-white"
                   : "bg-gray-700 text-white"
               }`}
             >
-              {msg.sender === "bot" ? (
+              {msg.sender === "bot" || msg.sender == "Danish"  ? (
                 <Bot className="w-4 h-4" />
               ) : (
                 <User className="w-4 h-4" />
@@ -112,7 +112,7 @@ console.log(data);
             <div className="max-w-[70%]">
               <div
                 className={`p-3 rounded-2xl shadow-sm ${
-                  msg.sender === "bot"
+                  msg.sender == "bot" || msg.sender == "Danish"  
                     ? "bg-white text-gray-800 rounded-tl-md"
                     : "bg-gray-700 text-white rounded-tr-md"
                 }`}
