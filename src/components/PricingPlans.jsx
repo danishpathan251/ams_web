@@ -13,7 +13,8 @@ const navigate = useNavigate();
       yearlyPrice: 2689,
       description: "Perfect for small teams getting started",
       features: [
-        "Up to 50 employees",
+        "Up to 10 employees",
+        "Add only 1 stores",
         "Basic attendance tracking", 
         "Simple leave management",
         "Basic event scheduling",
@@ -31,7 +32,8 @@ const navigate = useNavigate();
       yearlyPrice: 3649,
       description: "Ideal for growing businesses",
       features: [
-        "Up to 200 employees",
+        "Up to 15 employees each store",
+        "Add up to 2 stores",
         "Advanced attendance analytics",
         "Automated leave workflows",
         "Event management with notifications",
@@ -52,6 +54,7 @@ const navigate = useNavigate();
       description: "For large organizations with complex needs",
       features: [
         "Unlimited employees",
+        "Maximum 5 Store",
         "AI-powered insights",
         "Custom leave policies",
         "Enterprise event management",
