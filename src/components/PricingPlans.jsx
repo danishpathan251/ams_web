@@ -125,6 +125,7 @@ const navigate = useNavigate();
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div
+            id={plan.name}
               key={plan.name}
               className={`relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${
                 plan.popular ? 'scale-100 lg:scale-105 z-10 shadow-[#c22828]/20' : ''

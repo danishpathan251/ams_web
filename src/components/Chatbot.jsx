@@ -117,10 +117,11 @@ console.log(data);
                     : "bg-gray-700 text-white rounded-tr-md"
                 }`}
               >
-          <div
-  className="text-xs leading-relaxed whitespace-pre-line"
+<div
+  className="text-xs leading-relaxed whitespace-pre-line [&_a]:text-blue-500 [&_a]:underline [&_a:hover]:text-blue-700"
   dangerouslySetInnerHTML={{ __html: msg.text }}
 />
+
               </div>
               <div
                 className={`text-xs text-gray-500 mt-1 px-2 ${
